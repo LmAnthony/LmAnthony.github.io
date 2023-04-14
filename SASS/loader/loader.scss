@@ -1,0 +1,54 @@
+// Simple Loader for the page, circle multicolors
+// Put the loader in front of the page, load the page and fade out with the keyframe function
+.loader{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.850);
+    position: absolute;
+    z-index: 1;
+    -webkit-animation: loading 1s forwards;
+    animation: delete 0s forwards;
+    // Borders colors set up, top bot left right color diff, and add the keyframe function
+    .dot_loader:after{
+        content: " ";
+        position: fixed;
+        top: 50%;
+        left: 47%;
+        border-radius: 50px;
+        width: 80px;
+        height: 80px;
+        border: 10px solid transparent;
+        border-top-color: #9366c9;
+        border-bottom-color: #8d5bca;
+        border-left-color: #7b38cd;
+        border-right-color: #814dc0;
+        -webkit-animation: dot_loader 1s ease-in infinite;
+        animation: dot_loader 1s ease-in infinite;
+    }
+    // Border colors in rotate in 360deg 
+    @keyframes dot_loader {
+        0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+        }
+        100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+        }
+    }
+    // Loader go to behind the page -1 and opacity goes to 0
+    @keyframes delete {
+        0% {
+            opacity: 1;
+            z-index: 1;
+        }
+        99% {
+            opacity: 1;
+            z-index: 1;
+        }
+        100% {
+            opacity: 0;
+            z-index: -1;
+        }
+    }
+}

@@ -1,0 +1,45 @@
+.loader {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.85);
+  position: absolute;
+  z-index: 1;
+  animation: delete 0s forwards;
+}
+.loader .dot_loader:after {
+  content: " ";
+  position: fixed;
+  top: 50%;
+  left: 47%;
+  border-radius: 50px;
+  width: 80px;
+  height: 80px;
+  border: 10px solid transparent;
+  border-top-color: #9366c9;
+  border-bottom-color: #8d5bca;
+  border-left-color: #7b38cd;
+  border-right-color: #814dc0;
+  animation: dot_loader 1s ease-in infinite;
+}
+@keyframes dot_loader {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes delete {
+  0% {
+    opacity: 1;
+    z-index: 1;
+  }
+  99% {
+    opacity: 1;
+    z-index: 1;
+  }
+  100% {
+    opacity: 0;
+    z-index: -1;
+  }
+}/*# sourceMappingURL=loader.css.map */
