@@ -19,7 +19,7 @@
   border-bottom-color: #8d5bca;
   border-left-color: #7b38cd;
   border-right-color: #814dc0;
-  animation: dot_loader 1s ease-in infinite;
+  animation: dot_loader 2s ease infinite;
 }
 @keyframes dot_loader {
   0% {

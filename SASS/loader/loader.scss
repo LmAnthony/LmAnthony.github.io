@@ -23,7 +23,7 @@
         border-left-color: #7b38cd;
         border-right-color: #814dc0;
         -webkit-animation: dot_loader 1s ease-in infinite;
-        animation: dot_loader 1s ease-in infinite;
+        animation: dot_loader 2s ease infinite;
     }
     // Border colors in rotate in 360deg 
     @keyframes dot_loader {
