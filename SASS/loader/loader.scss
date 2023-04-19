@@ -1,5 +1,9 @@
 // Simple Loader for the page, circle multicolors
 // Put the loader in front of the page, load the page and fade out with the keyframe function
+// Permettre au loader de prendre toute la page
+body{
+    position: relative;
+}
 .loader{
     width: 100%;
     height: 100%;
