@@ -5,7 +5,7 @@
 // Logo/h1 title 'Ohmyfood' + White background + Box-shadow
 header{
     background: white;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.90);
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
     padding-top: 1.5em;
     padding-bottom: 0.8em;
     display: flex;
@@ -24,7 +24,7 @@ header{
         position: absolute;
         left: 10%;
         top: 30%;
-        font-size: x-large;
+        font-size: 1.5em;
     }
 }
 // GPS Icon + location (Paris, Belleville atm)
@@ -83,7 +83,7 @@ header{
     // Bouton cliquable.
     a{
         background: linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%);
-        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+        box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.25);
         border-radius: 25px;
         text-decoration: none;
         padding-bottom: 1.1em;
@@ -93,7 +93,12 @@ header{
         align-items: center;
         width: 16em;
     }
+    a:hover{
+        opacity: 0.7;
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.38);
+    }
 }
+// Fonctionnement de l'application avec trois étape à respecter !
 .functioning{
     display: flex;
     flex-direction: column;
@@ -108,12 +113,24 @@ header{
         line-height: 28px;
         margin-bottom: 1em;
     }
+    // Centrer les étapes, et les mettre en column
     .center__step{
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
     }
+    // Mettre en row en desktop
+    @media screen and (min-width: 1280px){
+        .center__step{
+            flex-direction: row;
+            justify-content: space-around;
+            .step__functionning{
+                width: 30%;
+            }
+        }
+    }
+    // Style et positionnement des étpaes
     .step__functionning{
         display: flex;
         position: relative;
@@ -125,6 +142,7 @@ header{
         border-radius: 20px;
         padding: 2em;
         margin-bottom: 1em;
+        // Chiffre VIOLET sur la gauche des étapes
         .step__number{
             position: absolute;
             left: -12px;
@@ -137,16 +155,26 @@ header{
         i{
             margin-right: 20px;
         }
-        .fa-store{
-            color: #9356DC;
-        }
         p{
             font-weight: 500;
             font-size: 16px;
             line-height: 19px;
         }
     }
+    // Changement de couleur des étapes au passage de la souris
+    .step__functionning:hover{
+        background-color: rgb(147, 86, 220, 0.1);
+        i{
+            color: rgb(147, 86, 220);
+        }
+    }
 }
+@media screen and (min-width: 1280px){
+    .functioning{
+        padding: 2em 9em 0 8em;
+    }
+}
+// ## Section pour les menus, titre + cartes des menus
 .restaurants__cards{
     display: flex;
     flex-wrap: wrap;
@@ -163,14 +191,15 @@ header{
         line-height: 28px;
         margin-bottom: 1em;
     }
+    // L'ensemble des cartes des menus, positionnement
     .cards{
         width: 100%;
-        height: 1100px;
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
-        align-content: space-between;
-        justify-content: space-between;
+        align-content: space-around;
+        justify-content: space-around;
+        // Carte des restaurants, style, positionnement
         .restaurant__card{
             position: relative;
             width: 100%;
@@ -193,6 +222,7 @@ header{
                 object-fit: cover;
                 border-radius: 20px 20px 0 0;
             }
+            // Contenu des cartes des menus en dessous des images des menus
             .content_card{
                 display: flex;
                 width: 100%;
@@ -221,10 +251,11 @@ header{
             .fa-heart{
                 font-size: 2em;
             }
+            // ETIQUETTES "NOUVEAU" à côté des 2 premiers menus
             .new{
                 position: absolute;
                 top: 5%;
-                left: 72%;
+                left: 65%;
                 background: #99E2D0;
                 box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
                 border-radius: 2px;
@@ -235,13 +266,75 @@ header{
                 text-align: center;
                 color: #008766;
             }
+            // Changement de position de l'étiquette "Nouveau" pour qu'il soit bien collé en haut à droite d'un menu.
+            @media screen and (min-width: 400px){
+                .new{
+                    left: 72%;
+                }
+            }
+            @media screen and (min-width: 650px){
+                .new{
+                    left: 85%;
+                }
+            }
+            @media screen and (min-width: 900px){
+                .new{
+                    left: 90%;
+                }
+            }
+        }
+        @media screen and (min-width: 768px){
+            // Cartes des menu responsive pour la version Tablette
+            .cards{
+                justify-content: space-around;
+                align-content: space-around;
+            }
+            .restaurant__card{
+                width: 49%;
+                margin-top: 1em;
+                .new{
+                    left: 72%;
+                }
+            }
+        }
+        @media screen and (min-width: 1280px){
+            // Menu 2 par 2 responsive DESKTOP
+            .restaurant__card{
+                width: 45%;
+                .new{
+                    left: 70%;
+                }
+            }
+            // Animation ZOOM
+            .restaurant__card:hover{
+                animation: zoom 0.3s forwards;
+            }
+            // ZOOM lors du passage de la souris sur un menu
+            @keyframes zoom {
+                from{
+                    transform: scale(1);
+                }
+              
+                to{
+                    transform: scale(1.05);
+                }
+            }
+        }
+    }
+}
+// MARGE DES CARTES DES RESTAURANTS POUR LA VERSION DESKTOP
+@media screen and (min-width: 1280px){
+    .restaurants__cards{
+        padding: 4em 9em 50px 8em;
+        .cards{
+            justify-content: space-between;
         }
     }
 }
 // Footer ##################
 footer{
     background: #353535;
-    padding-bottom: 2em;
+    padding: 2em 3em 1em 0;
     h3{
         font-family: 'Shrikhand';
         font-style: italic;
@@ -256,6 +349,14 @@ footer{
         text-decoration: none;
         color: white;
     }
+    // Changements de couleurs des liens dans le footer au click et au passage de la souris
+    a:hover{
+        color: rgb(147, 86, 220);
+    }
+    a:active{
+        color: rgb(255, 121, 218)
+    }
+    // Contenu du footer
     .footer_content{
         display: flex;
         flex-direction: column;
@@ -276,11 +377,247 @@ footer{
         }
     }
 }
+// Positionnement du FOOTER resposive pour le desktop 
+@media screen and (min-width: 1280px){
+    footer{
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+        justify-content: end;
+        .footer_content{
+            display: flex;
+            flex-direction: row;
+            li{
+                margin-right: 1em;
+            }
+            li:nth-child(even){
+                margin-right: 4em;
+            }
+        }
+    }
+}
+// Style de l'image des pages des menus
 .img__menu{
-    background-image: url(../assets/images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg);
-    background-repeat: no-repeat;
     background-size: cover;
-    background-position: center;
+    // taille de l'image
     width: 100%;
-    height: 270px;
+    height: 300px;
+    // pas de répitition d'image + image bien centré
+    background-position: center;
+    background-repeat: no-repeat;
+}
+// Changement de l'image d'une page pour chaque menu
+.img_menilmontant{
+    background-image: url(../assets/images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg);
+}
+.img_charonne{
+    background-image: url(../assets/images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg);
+}
+.img_cite_rouge{
+    background-image: url(../assets/images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg);
+}
+.img_folie_mericourt{
+    background-image: url(../assets/images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg);
+}
+// Section d'un menu complet, entrées, plats, desserts, style/positionnement
+.section__menu{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: space-between;
+    // positionnement du menu sur l'image au dessus
+    margin-top: -3.8em;
+    width: 100%;
+    background-color: #F6F6F6;
+    border-radius: 2em 2em 0 0;
+    padding: 1.3em;
+    padding-top: 2.3em;
+    margin-bottom: 2em;
+    h1{
+        font-family: 'Shrikhand';
+        font-weight: 400;
+        font-size: 28px;
+        line-height: 41px;
+        width: 80%;
+    }
+    // Le LIKE button, coeur qui se rempli au click/hover
+    button{
+        border: none;
+        background-color: rgba(255, 255, 255, 0);
+        font-family: "Roboto";
+        cursor: pointer;
+        width: 20%;
+        .fa-heart{
+            font-size: 1.8em;
+        }
+    }
+    // Carte du menu, exemple: l'entrée
+    .menu-cards{
+        margin-top: 1em;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        width: 100%;
+        h2{
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 300;
+            font-size: 16px;
+            line-height: 19px;
+            width: 100%;
+            margin-top: 1em;
+        }
+        // Ligne en dessous de l'Entrée du menu
+        .line{
+            border-top: solid 3px;
+            border-top-color: #99E2D0;
+            width: 40px;
+            position: relative;
+            bottom: -5px;
+        }
+        // Style de la card du produit dans un menu.
+        .card{
+            display: flex;
+            flex-wrap: wrap;
+            width: 100%;
+            background: #FFFFFF;
+            box-shadow: 0px 4.01149px 15.0431px rgba(0, 0, 0, 0.1);
+            border-radius: 15px;
+            padding: 0.6em 1em 0.6em 1em;
+            margin-top: 1em;
+            position: relative;
+            h3{
+                font-family: 'Roboto';
+                font-style: normal;
+                font-weight: 500;
+                font-size: 18px;
+                line-height: 21px;
+                width: 100%;
+                margin-bottom: 0.2em;
+            }
+            p{
+                font-family: 'Roboto';
+                font-style: normal;
+                font-weight: 300;
+                font-size: 1em;
+                line-height: 18px;
+                width: 90%;
+            }
+            .prix{
+                width: 10%;
+                font-weight: 700;
+            }
+            // Style de la 'Checkbox' (et caché pour l'afficher au passage de la souris (hover).
+            .add{
+                height: 100%;
+                width: 0%;
+                position: absolute;
+                right: 0;
+                top: 0;
+                text-align: center;
+                color: #ffffff;
+                background-color: #99E2D0;
+                line-height: 65px;
+                font-size: 1.5em;
+                border-radius: 0 15px 15px 0;
+                overflow: hidden;
+            }
+        }
+        // Lors du passage de la souris sur un produit(exemple: une entrée)
+        // une checkbox apparaitra sur la droite du produit.
+        .card:hover{
+            .add{
+                display: block;
+                width: 15%;
+                transition: width 0.4s ease-in-out;
+            }
+            p{
+                width: 80%;
+            }
+            .prix{
+                position: absolute;
+                width: 25%;
+                right: 0;
+                bottom: 15%;
+                transition: width 0.4s ease-in-out;
+            }
+        }
+        // Chaque 'spawn/apparition' des menus séparé pour les afficher un par un.
+        .spawn_card_one{
+            opacity: 0;
+            animation: appear 1s forwards;
+        }
+        .spawn_card_two{
+            opacity: 0;
+            animation: appear 1s forwards;
+            animation-delay: 0.25s;
+        }
+        .spawn_card_three{
+            opacity: 0;
+            animation: appear 1s forwards;
+            animation-delay: 0.5s;
+        }
+        .spawn_card_four{
+            opacity: 0;
+            animation: appear 1s forwards;
+            animation-delay: 0.75s;
+        }
+        // Animation simple pour faire apparaître les entrées, plats et les désserts, un par un.
+        @keyframes appear {
+            from{
+                transform: translateY(15%);
+                opacity: 0;
+            }
+          
+            to{
+                transform: translateY(0%);
+                opacity: 1;
+            }
+        }
+    }
+    // Positionnement du bouton au centre de l'écran
+    .btn_order{
+        width: 100%;
+        height: 50px;
+        margin-top: 4em;
+        display: flex;
+        justify-content: center;
+    }
+    // Style du bouton (couleur selon les normes) etc
+    .btn_order_style{
+        text-decoration: none;
+        color: #fff;
+        background: linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%);
+        box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.25);
+        border-radius: 25px;
+        padding: 1em 3.2em 1em 3.2em;
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 19px;
+    }
+    // Bouton 'Commander' au passage de la souris, une opacité faible
+    .btn_order_style:hover{
+        opacity: 0.7;
+        box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.38);
+    }
+}
+// Responsive desktop pour la section des menus, 
+// titre centré et ajout de marge pour une meilleure visibilité
+@media screen and (min-width: 1280px){
+    .section__menu{
+        display:flex;
+        justify-content: center;
+        width: 80%;
+        margin-left: 10%;
+        padding: 4em 15em 4em 15em;
+        h1{
+            text-align: center;
+            width: 48%;
+        }
+        button{
+            margin-left: -2em;
+        }
+    }
 }
