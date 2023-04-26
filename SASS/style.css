@@ -88,10 +88,12 @@ header a {
   justify-content: center;
   align-items: center;
   width: 16em;
+  transition: all 0.2s ease-out;
 }
 .reservation__exploreBtn a:hover {
   opacity: 0.7;
-  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.38);
+  transition: all 0.2s ease-in;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
 }
 
 .functioning {
@@ -131,10 +133,11 @@ header a {
   justify-content: flex-start;
   width: 90%;
   align-items: center;
+  background: #F7F7F7;
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
   border-radius: 20px;
   padding: 2em;
-  margin-bottom: 1em;
+  margin-bottom: 2em;
 }
 .functioning .step__functionning .step__number {
   position: absolute;
@@ -287,20 +290,13 @@ header a {
 @media screen and (min-width: 1280px) {
   .restaurants__cards .cards .restaurant__card {
     width: 45%;
+    transition: transform 0.2s;
   }
   .restaurants__cards .cards .restaurant__card .new {
     left: 70%;
   }
   .restaurants__cards .cards .restaurant__card:hover {
-    animation: zoom 0.3s forwards;
-  }
-  @keyframes zoom {
-    from {
-      transform: scale(1);
-    }
-    to {
-      transform: scale(1.05);
-    }
+    transform: scale(1.05);
   }
 }
 
@@ -468,8 +464,11 @@ footer .footer_content li .fa-handshake-angle {
   font-weight: 500;
   font-size: 18px;
   line-height: 21px;
-  width: 100%;
+  width: 70%;
   margin-bottom: 0.2em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .section__menu .menu-cards .card p {
   font-family: "Roboto";
@@ -478,6 +477,9 @@ footer .footer_content li .fa-handshake-angle {
   font-size: 1em;
   line-height: 18px;
   width: 90%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .section__menu .menu-cards .card .prix {
   width: 10%;
@@ -496,21 +498,22 @@ footer .footer_content li .fa-handshake-angle {
   font-size: 1.5em;
   border-radius: 0 15px 15px 0;
   overflow: hidden;
+  transition: width 0.25s ease-in;
 }
 .section__menu .menu-cards .card:hover .add {
   display: block;
   width: 15%;
-  transition: width 0.4s ease-in-out;
+  transition: width 0.25s ease-in-out;
 }
 .section__menu .menu-cards .card:hover p {
-  width: 80%;
+  width: 55%;
 }
 .section__menu .menu-cards .card:hover .prix {
   position: absolute;
   width: 25%;
   right: 0;
   bottom: 15%;
-  transition: width 0.4s ease-in-out;
+  transition: width 0.25s ease-in-out;
 }
 .section__menu .menu-cards .spawn_card_one {
   opacity: 0;
@@ -547,6 +550,7 @@ footer .footer_content li .fa-handshake-angle {
   margin-top: 4em;
   display: flex;
   justify-content: center;
+  text-decoration: none;
 }
 .section__menu .btn_order_style {
   text-decoration: none;
@@ -560,10 +564,12 @@ footer .footer_content li .fa-handshake-angle {
   font-weight: 500;
   font-size: 16px;
   line-height: 19px;
+  transition: all 0.2s ease-out;
 }
 .section__menu .btn_order_style:hover {
   opacity: 0.7;
-  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.38);
+  transition: all 0.2s ease-in;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
 }
 
 @media screen and (min-width: 1280px) {

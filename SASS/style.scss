@@ -92,10 +92,14 @@ header{
         justify-content: center;
         align-items: center;
         width: 16em;
+        // Animation effet inverse au passage de la souris
+        transition: all 0.2s ease-out;
     }
+    // Au passage de la souris, l'opacité se réduit et son ombre s'étend.
     a:hover{
         opacity: 0.7;
-        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.38);
+        transition: all 0.2s ease-in;
+        box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.30);
     }
 }
 // Fonctionnement de l'application avec trois étape à respecter !
@@ -138,10 +142,11 @@ header{
         justify-content: flex-start;
         width: 90%;
         align-items: center;
+        background: #F7F7F7;
         box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
         border-radius: 20px;
         padding: 2em;
-        margin-bottom: 1em;
+        margin-bottom: 2em;
         // Chiffre VIOLET sur la gauche des étapes
         .step__number{
             position: absolute;
@@ -301,23 +306,15 @@ header{
             // Menu 2 par 2 responsive DESKTOP
             .restaurant__card{
                 width: 45%;
+                // Zoom out
+                transition: transform .2s;
                 .new{
                     left: 70%;
                 }
             }
-            // Animation ZOOM
+            // ZOOM lors du passage de la souris
             .restaurant__card:hover{
-                animation: zoom 0.3s forwards;
-            }
-            // ZOOM lors du passage de la souris sur un menu
-            @keyframes zoom {
-                from{
-                    transform: scale(1);
-                }
-              
-                to{
-                    transform: scale(1.05);
-                }
+                transform: scale(1.05);
             }
         }
     }
@@ -492,8 +489,12 @@ footer{
                 font-weight: 500;
                 font-size: 18px;
                 line-height: 21px;
-                width: 100%;
+                width: 70%;
                 margin-bottom: 0.2em;
+                // 3 propriété pour l'ajout de points de suspension lorsque le texte dépasse
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
             }
             p{
                 font-family: 'Roboto';
@@ -502,6 +503,10 @@ footer{
                 font-size: 1em;
                 line-height: 18px;
                 width: 90%;
+                // 3 propriété pour l'ajout de points de suspension lorsque le texte dépasse
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
             }
             .prix{
                 width: 10%;
@@ -521,6 +526,8 @@ footer{
                 font-size: 1.5em;
                 border-radius: 0 15px 15px 0;
                 overflow: hidden;
+                // Animation inverse de la checkbox
+                transition: width 0.25s ease-in;
             }
         }
         // Lors du passage de la souris sur un produit(exemple: une entrée)
@@ -529,17 +536,17 @@ footer{
             .add{
                 display: block;
                 width: 15%;
-                transition: width 0.4s ease-in-out;
+                transition: width 0.25s ease-in-out;
             }
             p{
-                width: 80%;
+                width: 55%;
             }
             .prix{
                 position: absolute;
                 width: 25%;
                 right: 0;
                 bottom: 15%;
-                transition: width 0.4s ease-in-out;
+                transition: width 0.25s ease-in-out;
             }
         }
         // Chaque 'spawn/apparition' des menus séparé pour les afficher un par un.
@@ -582,6 +589,7 @@ footer{
         margin-top: 4em;
         display: flex;
         justify-content: center;
+        text-decoration: none;
     }
     // Style du bouton (couleur selon les normes) etc
     .btn_order_style{
@@ -596,11 +604,14 @@ footer{
         font-weight: 500;
         font-size: 16px;
         line-height: 19px;
+        // Animation hover out
+        transition: all 0.2s ease-out;
     }
     // Bouton 'Commander' au passage de la souris, une opacité faible
     .btn_order_style:hover{
         opacity: 0.7;
-        box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.38);
+        transition: all 0.2s ease-in;
+        box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.30);
     }
 }
 // Responsive desktop pour la section des menus, 

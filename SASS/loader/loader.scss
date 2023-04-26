@@ -11,7 +11,7 @@ body{
     position: absolute;
     z-index: 1;
     -webkit-animation: loading 1s forwards;
-    animation: delete 0s forwards;
+    animation: delete 2s forwards;
     // Borders colors set up, top bot left right color diff, and add the keyframe function
     .dot_loader:after{
         content: " ";
