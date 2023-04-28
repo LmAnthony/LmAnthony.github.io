@@ -9,7 +9,7 @@
     position: relative;
 }
 .like_hidden:hover{
-    -webkit-animation: fillHeart 0.4s ease forwards;
+    animation: fillHeart 0.4s ease forwards;
 }
 @keyframes fillHeart{
     from{
