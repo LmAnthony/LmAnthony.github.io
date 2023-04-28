@@ -63,11 +63,11 @@ body {
   border-radius: 50px;
   width: 80px;
   height: 80px;
-  border: 10px solid transparent;
-  border-top-color: #9366c9;
-  border-bottom-color: #8d5bca;
+  border: 6px dotted transparent;
   border-left-color: #7b38cd;
-  border-right-color: #814dc0;
+  border-top-color: #99E2D0;
+  border-right-color: #FF79DA;
+  border-bottom-color: #99E2D0;
   animation: dot_loader 2s ease infinite;
 }
 @keyframes dot_loader {
@@ -75,7 +75,7 @@ body {
     transform: rotate(0deg);
   }
   100% {
-    transform: rotate(360deg);
+    transform: rotate(1080deg);
   }
 }
 @keyframes delete {
