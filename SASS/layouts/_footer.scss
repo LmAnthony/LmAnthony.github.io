@@ -1,0 +1,65 @@
+// Footer ##################
+footer{
+    background: #353535;
+    padding: 2em 3em 1em 0;
+    h3{
+        font-family: 'Shrikhand';
+        font-style: italic;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 26px;
+        color: white;
+        margin: 0 0 1em 1em;
+        padding-top: 1em;
+    }
+    a{
+        text-decoration: none;
+        color: white;
+    }
+    // Changements de couleurs des liens dans le footer au click et au passage de la souris
+    a:hover{
+        color: rgb(147, 86, 220);
+    }
+    a:active{
+        color: rgb(255, 121, 218)
+    }
+    // Contenu du footer
+    .footer_content{
+        display: flex;
+        flex-direction: column;
+        margin-left: 1em;
+        li{
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 19px;
+            margin-bottom: 0.5em;
+            .fa-utensils{
+                margin-right: 0.8em;
+            }
+            .fa-handshake-angle{
+                margin-right: 0.5em;
+            }
+        }
+    }
+}
+// Positionnement du FOOTER resposive pour le desktop 
+@media screen and (min-width: 1280px){
+    footer{
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+        justify-content: end;
+        .footer_content{
+            display: flex;
+            flex-direction: row;
+            li{
+                margin-right: 1em;
+            }
+            li:nth-child(even){
+                margin-right: 4em;
+            }
+        }
+    }
+}

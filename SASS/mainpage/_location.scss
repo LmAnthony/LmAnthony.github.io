@@ -1,0 +1,21 @@
+// GPS Icon + location (Paris, Belleville atm)
+.location__greyBackground{
+    background: #EAEAEA;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 17px;
+    padding-top: 1.5em;
+    padding-bottom: 1.5em;
+    h2{
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 19px;
+    }
+    i{
+        font-size: 20px;
+    }
+}

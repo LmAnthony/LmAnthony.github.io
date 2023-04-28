@@ -1,0 +1,77 @@
+// Fonctionnement de l'application avec trois étape à respecter !
+.functioning{
+    display: flex;
+    flex-direction: column;
+    padding: 2em;
+    h2, p{
+        font-family: 'Roboto';
+        font-style: normal;
+    }
+    h2{
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 28px;
+        margin-bottom: 1em;
+    }
+    // Centrer les étapes, et les mettre en column
+    .center__step{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    // Mettre en row en desktop
+    @media screen and (min-width: 1280px){
+        .center__step{
+            flex-direction: row;
+            justify-content: space-around;
+            .step__functionning{
+                width: 30%;
+            }
+        }
+    }
+    // Style et positionnement des étpaes
+    .step__functionning{
+        display: flex;
+        position: relative;
+        flex-direction: row;
+        justify-content: flex-start;
+        width: 90%;
+        align-items: center;
+        background: #F7F7F7;
+        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
+        border-radius: 20px;
+        padding: 2em;
+        margin-bottom: 2em;
+        // Chiffre VIOLET sur la gauche des étapes
+        .step__number{
+            position: absolute;
+            left: -12px;
+            padding: 3px 8px 3px 8px;
+            border-radius: 20px 20px 20px 20px;
+            background-color: #9356DC;
+            color: white;
+            margin-right: 20px;
+        }
+        i{
+            margin-right: 20px;
+        }
+        p{
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 19px;
+        }
+    }
+    // Changement de couleur des étapes au passage de la souris
+    .step__functionning:hover{
+        background-color: rgb(147, 86, 220, 0.1);
+        i{
+            color: rgb(147, 86, 220);
+        }
+    }
+}
+@media screen and (min-width: 1280px){
+    .functioning{
+        padding: 2em 9em 0 8em;
+    }
+}

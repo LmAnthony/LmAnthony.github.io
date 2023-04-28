@@ -1,0 +1,27 @@
+.fa-heart{
+    font-size: 1.8em;
+}
+.like{
+    position: absolute;
+}
+.like_hidden{
+    color: transparent;
+    position: relative;
+}
+.like_hidden:hover{
+    -webkit-animation: fillHeart 0.4s ease forwards;
+}
+@keyframes fillHeart{
+    from{
+        background: -webkit-linear-gradient(top, #9356DC, #FF79DA);
+        background-repeat: no-repeat;
+        background-position-y: 28px;
+        background-clip: text;
+    }
+    to{
+        background: -webkit-linear-gradient(top, #9356DC, #FF79DA);
+        background-repeat: no-repeat;
+        background-position-y: 0;
+        background-clip: text;
+    }
+}

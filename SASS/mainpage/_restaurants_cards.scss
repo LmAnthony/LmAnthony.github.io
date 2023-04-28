@@ -1,0 +1,149 @@
+// ## Section pour les menus, titre + cartes des menus
+.restaurants__cards{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    background: #F7F7F7;
+    padding: 4em 1.2em 50px 1.2em;
+    h2, h3, p, .new{
+        font-family: 'Roboto';
+        font-style: normal;
+    }
+    h2{
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 28px;
+        margin-bottom: 1em;
+    }
+    // L'ensemble des cartes des menus, positionnement
+    .cards{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-content: space-around;
+        justify-content: space-around;
+        // Carte des restaurants, style, positionnement
+        .restaurant__card{
+            position: relative;
+            width: 100%;
+            height: 250px;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+            border-radius: 15px;
+            a{
+                text-decoration: none;
+                color: black;
+                width: 100%;
+                height: 100%;
+            }
+            .img_card{
+                width: 100%;
+                height: 70%;
+            }
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                border-radius: 20px 20px 0 0;
+            }
+            // Contenu des cartes des menus en dessous des images des menus
+            .content_card{
+                display: flex;
+                width: 100%;
+                height: 30%;
+                flex-direction: column;
+                justify-content: center;
+                margin-left: 1em;
+            }
+            h3{
+                font-weight: 700;
+                font-size: 18px;
+                line-height: 21px;
+            }
+            p{
+                font-weight: 300;
+                font-size: 17px;
+                line-height: 20px;
+            }
+            button{
+                position: absolute;
+                border: none;
+                left: 85%;
+                bottom: 10%;
+                background-color: transparent;
+            }
+            .fa-heart{
+                font-size: 2em;
+            }
+            // ETIQUETTES "NOUVEAU" à côté des 2 premiers menus
+            .new{
+                position: absolute;
+                top: 5%;
+                left: 65%;
+                background: #99E2D0;
+                box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
+                border-radius: 2px;
+                padding: 0.7em;
+                font-weight: 500;
+                font-size: 14px;
+                line-height: 16px;
+                text-align: center;
+                color: #008766;
+            }
+            // Changement de position de l'étiquette "Nouveau" pour qu'il soit bien collé en haut à droite d'un menu.
+            @media screen and (min-width: 400px){
+                .new{
+                    left: 72%;
+                }
+            }
+            @media screen and (min-width: 650px){
+                .new{
+                    left: 85%;
+                }
+            }
+            @media screen and (min-width: 900px){
+                .new{
+                    left: 90%;
+                }
+            }
+        }
+        @media screen and (min-width: 768px){
+            // Cartes des menu responsive pour la version Tablette
+            .cards{
+                justify-content: space-around;
+                align-content: space-around;
+            }
+            .restaurant__card{
+                width: 49%;
+                margin-top: 1em;
+                .new{
+                    left: 72%;
+                }
+            }
+        }
+        @media screen and (min-width: 1280px){
+            // Menu 2 par 2 responsive DESKTOP
+            .restaurant__card{
+                width: 45%;
+                // Zoom out
+                transition: transform .2s;
+                .new{
+                    left: 70%;
+                }
+            }
+            // ZOOM lors du passage de la souris
+            .restaurant__card:hover{
+                transform: scale(1.05);
+            }
+        }
+    }
+}
+// MARGE DES CARTES DES RESTAURANTS POUR LA VERSION DESKTOP
+@media screen and (min-width: 1280px){
+    .restaurants__cards{
+        padding: 4em 9em 50px 8em;
+        .cards{
+            justify-content: space-between;
+        }
+    }
+}

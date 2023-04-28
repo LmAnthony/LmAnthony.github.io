@@ -1,0 +1,243 @@
+// Style de l'image des pages des menus
+.img__menu{
+    background-size: cover;
+    // taille de l'image
+    width: 100%;
+    height: 300px;
+    // pas de répitition d'image + image bien centré
+    background-position: center;
+    background-repeat: no-repeat;
+}
+// Changement de l'image d'une page pour chaque menu
+.img_menilmontant{
+    background-image: url(../../assets/images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg);
+}
+.img_charonne{
+    background-image: url(../../assets/images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg);
+}
+.img_cite_rouge{
+    background-image: url(../../assets/images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg);
+}
+.img_folie_mericourt{
+    background-image: url(../../assets/images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg);
+}
+// Section d'un menu complet, entrées, plats, desserts, style/positionnement
+.section__menu{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: space-between;
+    // positionnement du menu sur l'image au dessus
+    margin-top: -3.8em;
+    width: 100%;
+    background-color: #F6F6F6;
+    border-radius: 2em 2em 0 0;
+    padding: 1.3em;
+    padding-top: 2.3em;
+    margin-bottom: 2em;
+    .headMenu{
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+    h1{
+        font-family: 'Shrikhand';
+        font-weight: 400;
+        font-size: 28px;
+        line-height: 41px;
+        width: 80%;
+    }
+    // Le LIKE button, coeur qui se rempli au click/hover
+    button{
+        border: none;
+        background-color: rgba(255, 255, 255, 0);
+        font-family: "Roboto";
+        cursor: pointer;
+        width: 20%;
+    }
+    // Carte du menu, exemple: l'entrée
+    .menu-cards{
+        margin-top: 1em;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        width: 100%;
+        h2{
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 300;
+            font-size: 16px;
+            line-height: 19px;
+            width: 100%;
+            margin-top: 1em;
+        }
+        // Ligne en dessous de l'Entrée du menu
+        .line{
+            border-top: solid 3px;
+            border-top-color: #99E2D0;
+            width: 40px;
+            position: relative;
+            bottom: -5px;
+        }
+        // Style de la card du produit dans un menu.
+        .card{
+            display: flex;
+            flex-wrap: wrap;
+            width: 100%;
+            background: #FFFFFF;
+            box-shadow: 0px 4.01149px 15.0431px rgba(0, 0, 0, 0.1);
+            border-radius: 15px;
+            padding: 0.6em 1em 0.6em 1em;
+            margin-top: 1em;
+            position: relative;
+            h3{
+                font-family: 'Roboto';
+                font-style: normal;
+                font-weight: 500;
+                font-size: 18px;
+                line-height: 21px;
+                width: 70%;
+                margin-bottom: 0.2em;
+                // 3 propriété pour l'ajout de points de suspension lorsque le texte dépasse
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+            p{
+                font-family: 'Roboto';
+                font-style: normal;
+                font-weight: 300;
+                font-size: 1em;
+                line-height: 18px;
+                width: 90%;
+                // 3 propriété pour l'ajout de points de suspension lorsque le texte dépasse
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+            .prix{
+                width: 10%;
+                font-weight: 700;
+            }
+            // Style de la 'Checkbox' (et caché pour l'afficher au passage de la souris (hover).
+            .add{
+                height: 100%;
+                width: 0%;
+                position: absolute;
+                right: 0;
+                top: 0;
+                text-align: center;
+                color: #ffffff;
+                background-color: #99E2D0;
+                line-height: 65px;
+                font-size: 1.5em;
+                border-radius: 0 15px 15px 0;
+                overflow: hidden;
+                // Animation inverse de la checkbox
+                transition: width 0.25s ease-in;
+            }
+        }
+        // Lors du passage de la souris sur un produit(exemple: une entrée)
+        // une checkbox apparaitra sur la droite du produit.
+        .card:hover{
+            .add{
+                display: block;
+                width: 13%;
+                transition: width 0.25s ease-in-out;
+            }
+            p{
+                width: 55%;
+            }
+            .prix{
+                position: absolute;
+                width: 25%;
+                right: 0;
+                bottom: 15%;
+                transition: width 0.25s ease-in-out;
+            }
+        }
+        // Chaque 'spawn/apparition' des menus séparé pour les afficher un par un.
+        .spawn_card_one{
+            opacity: 0;
+            animation: appear 1s forwards;
+        }
+        .spawn_card_two{
+            opacity: 0;
+            animation: appear 1s forwards;
+            animation-delay: 0.25s;
+        }
+        .spawn_card_three{
+            opacity: 0;
+            animation: appear 1s forwards;
+            animation-delay: 0.5s;
+        }
+        .spawn_card_four{
+            opacity: 0;
+            animation: appear 1s forwards;
+            animation-delay: 0.75s;
+        }
+        // Animation simple pour faire apparaître les entrées, plats et les désserts, un par un.
+        @keyframes appear {
+            from{
+                transform: translateY(15%);
+                opacity: 0;
+            }
+          
+            to{
+                transform: translateY(0%);
+                opacity: 1;
+            }
+        }
+    }
+    // Positionnement du bouton au centre de l'écran
+    .btn_order{
+        width: 100%;
+        height: 50px;
+        margin-top: 4em;
+        display: flex;
+        justify-content: center;
+        text-decoration: none;
+    }
+    // Style du bouton (couleur selon les normes) etc
+    .btn_order_style{
+        text-decoration: none;
+        color: #fff;
+        background: linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%);
+        box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.25);
+        border-radius: 25px;
+        padding: 1em 3.2em 1em 3.2em;
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 19px;
+        // Animation hover out
+        transition: all 0.2s ease-out;
+    }
+    // Bouton 'Commander' au passage de la souris, une opacité faible
+    .btn_order_style:hover{
+        opacity: 0.7;
+        transition: all 0.2s ease-in;
+        box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.30);
+    }
+}
+// Responsive desktop pour la section des menus, 
+// titre centré et ajout de marge pour une meilleure visibilité
+@media screen and (min-width: 1280px){
+    .section__menu{
+        display:flex;
+        justify-content: center;
+        width: 60%;
+        margin-right: auto;
+        margin-left: auto;
+        padding: 4em 8em 4em 8em;
+        h1{
+            text-align: center;
+            width: auto;
+        }
+        button{
+            margin-left: 1em;
+            width: auto;
+        }
+    }
+}
