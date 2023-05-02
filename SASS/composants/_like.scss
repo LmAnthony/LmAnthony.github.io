@@ -1,16 +1,21 @@
+// Taille du coeur
 .fa-heart{
     font-size: 2.3em;
 }
+// Premier coeur avec bordure posé en position de parent.
 .like{
     position: absolute;
 }
+// Coeur positionner sur son parent, et animation inverse du hover.
 .like_hidden{
     color: transparent;
     position: relative;
+    animation: emptyHeart 0.2s ease forwards;
 }
 .like_hidden:hover{
     animation: fillHeart 0.4s ease forwards;
 }
+// Coeur qui se remplit au passage de la souris/ou au clique sur les devices plus petits.
 @keyframes fillHeart{
     from{
         background: -webkit-linear-gradient(top, #9356DC, #FF79DA);
@@ -22,6 +27,21 @@
         background: -webkit-linear-gradient(top, #9356DC, #FF79DA);
         background-repeat: no-repeat;
         background-position-y: 0;
+        background-clip: text;
+    }
+}
+// Coeur qui se vide lorsque la souris se retire du coeur.
+@keyframes emptyHeart{
+    from{
+        background: -webkit-linear-gradient(top, #9356DC, #FF79DA);
+        background-repeat: no-repeat;
+        background-position-y: 0;
+        background-clip: text;
+    }
+    to{
+        background: -webkit-linear-gradient(top, #9356DC, #FF79DA);
+        background-repeat: no-repeat;
+        background-position-y: 28px;
         background-clip: text;
     }
 }

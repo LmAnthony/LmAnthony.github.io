@@ -104,6 +104,7 @@ body {
 .like_hidden {
   color: transparent;
   position: relative;
+  animation: emptyHeart 0.2s ease forwards;
 }
 
 .like_hidden:hover {
@@ -122,6 +123,22 @@ body {
     background: -webkit-linear-gradient(top, #9356DC, #FF79DA);
     background-repeat: no-repeat;
     background-position-y: 0;
+    -webkit-background-clip: text;
+            background-clip: text;
+  }
+}
+@keyframes emptyHeart {
+  from {
+    background: -webkit-linear-gradient(top, #9356DC, #FF79DA);
+    background-repeat: no-repeat;
+    background-position-y: 0;
+    -webkit-background-clip: text;
+            background-clip: text;
+  }
+  to {
+    background: -webkit-linear-gradient(top, #9356DC, #FF79DA);
+    background-repeat: no-repeat;
+    background-position-y: 28px;
     -webkit-background-clip: text;
             background-clip: text;
   }
