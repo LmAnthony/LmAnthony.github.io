@@ -1,12 +1,12 @@
-// Taille du coeur
+// font-size of heart
 .fa-heart{
     font-size: 2.3em;
 }
-// Premier coeur avec bordure posé en position de parent.
+// First heart-border in absolute for the heart-solid
 .like{
     position: absolute;
 }
-// Coeur positionner sur son parent, et animation inverse du hover.
+// Second heart-solid in relative TO the heart-border
 .like_hidden{
     color: transparent;
     position: relative;
